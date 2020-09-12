@@ -139,6 +139,8 @@ LABEL repo2docker.ref="None"
 LABEL repo2docker.repo="https://github.com/binder-examples/conda"
 LABEL repo2docker.version="0.11.0+166.gc1afe63"
 
+RUN chmod -R a+rX /tmp/*
+
 # We always want containers to run as non-root
 USER ${NB_USER}
 
@@ -149,5 +151,3 @@ ENTRYPOINT ["/usr/local/bin/repo2docker-entrypoint"]
 
 # Specify the default command to run
 CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
-
-RUN chmod -R a+rX /tmp/*
