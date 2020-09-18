@@ -1,8 +1,6 @@
 
 FROM buildpack-deps:bionic
 
-RUN echo 'cache break 2'
-
 # avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -137,7 +135,7 @@ RUN chown -R ${NB_USER}:${NB_USER} ${REPO_DIR}
 
 LABEL repo2docker.ref="None"
 LABEL repo2docker.repo="https://github.com/binder-examples/conda"
-LABEL repo2docker.version="0.11.0+166.gc1afe63"
+LABEL repo2docker.version="0.11.0+166.gc1afe63.dirty"
 
 # We always want containers to run as non-root
 USER ${NB_USER}
